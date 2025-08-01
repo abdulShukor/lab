@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   labels:
     run: nginx
+    hello: world
   name: nginx-yaml
 spec:
   containers:
