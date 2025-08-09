@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: abdul
+  name: abdul
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: abdul
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: abdul
+    spec:
+      containers:
+      - image: httpd
+        name: httpd
+
+  strategy:
+   type: RollingUpdate
+   rollingUpdate:
+     maxUnavailable: 1
+     maxSurge: 1      
